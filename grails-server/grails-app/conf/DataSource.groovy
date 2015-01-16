@@ -30,9 +30,9 @@ environments {
     development {
         dataSource {
             dbCreate = 'create-drop' // one of 'create', 'create-drop','update'
-			url = "jdbc:mysql://localhost:3306/wine?autoReconnect=true"
-            username = "root"
-            password = "mirko"
+		url = "jdbc:mysql://localhost:3306/wine?autoReconnect=true"
+            	username = "root"
+            	password = "mirko"
 		}
         hibernate {
             show_sql = true
@@ -41,17 +41,17 @@ environments {
     test {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop','update'
-			url = "jdbc:mysql://qdev:3306/wine?autoReconnect=true"
-            username = "root"
-            password = "adminadmin"
+		url = "jdbc:mysql://test:3306/wine?autoReconnect=true"
+		username = "root"
+		password = "mirko"
         }
     }
     production {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop','update'
-			url = "jdbc:mysql://qdev:3306/wine?autoReconnect=true"
-            username = "root"
-            password = "adminadmin"
+		url = "jdbc:mysql://prod:3306/wine?autoReconnect=true"
+            	username = "root"
+            	password = "mirko"
         }
     }
 }
