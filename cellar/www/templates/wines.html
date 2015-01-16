@@ -1,0 +1,40 @@
+<ion-view title="Wines">
+  <ion-nav-buttons side="left">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button menu-toggle="right" class="button button-icon icon ion-ios7-plus-outline" ng-click="showAddChangeDialog('add')"></button>
+  </ion-nav-buttons>
+  <ion-content has-header="true">
+
+	<!-- search bar -->
+	<div class="item item-input-inset">
+		<label class="item item-input-wrapper">
+		<i class="icon ion-search placeholder-icon"></i>
+		<input id="searchKey" type="text" placeholder="what are you looking for?" ng-model="search.name">
+		</label>
+	</div>
+
+	<ion-list>
+		<ion-item ng-if="list.length == 0">
+			Press <i class="icon ion-ios7-plus-outline"></i> to add item
+		</ion-item>
+		
+		
+		<ion-item ng-repeat="wine in wines | filter:search" >
+		<a class="item item-thumbnail-left" href="#/app/wines/{{wine._id}}">	
+			<img ng-src="pics/{{ wine.picture }}">
+					{{ wine.name }}
+					<p>{{wine.country}}</p>
+		</a>
+		<ion-option-button class="button-calm" ng-click="showEditWine(wine)">
+            Edit
+         </ion-option-button>
+		<ion-option-button class="button-assertive" ng-click="deleteWine(wine)">
+            Delete
+         </ion-option-button>		 
+		</ion-item>
+
+	</ion-list>
+  </ion-content>
+</ion-view>

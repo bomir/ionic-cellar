@@ -1,0 +1,26 @@
+<ion-modal-view>
+  <ion-header-bar ng-class="(barClass) ? barClass : 'bar-stable'">
+	<button menu-toggle="left" class="button ion-chevron-left button-clear" ng-click="closeAddChangeDialog()"></button>
+    <h1 class="title">Add Wine</h1>
+    <div class="buttons">
+	 <!-- button close on the right
+      <button class="button button-clear" ng-click="closeAddChangeDialog()">Close</button>
+	  -->	
+	  <!-- button close on the left -->
+    </div>
+  </ion-header-bar>
+   <ion-content>
+		<form ng-show="action == 'add'" name="form" ng-submit="addWine()">
+            <div ng-include="'templates/_form.html'"></div>			
+			<label class="item">
+			  <button class="button button-block button-positive" type="submit">Save</button>
+			</label>
+		</form>
+		<form ng-show="action == 'change'" name="form" ng-submit="editWine()">
+            <div ng-include="'templates/_form.html'"></div>			
+			<label class="item">
+			  <button class="button button-block button-positive" type="submit">Save</button>
+			</label>
+		</form>
+    </ion-content>
+</ion-modal-view>  
